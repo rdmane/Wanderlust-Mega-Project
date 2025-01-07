@@ -89,11 +89,11 @@ pipeline {
             steps{
                 script{
                         dir('backend'){
-                            docker_build("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","madhupdevops")
+                            docker_build("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","rdmane")
                         }
                     
                         dir('frontend'){
-                            docker_build("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","madhupdevops")
+                            docker_build("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","rdmane")
                         }
                 }
             }
@@ -102,8 +102,8 @@ pipeline {
         stage("Docker: Push to DockerHub"){
             steps{
                 script{
-                    docker_push("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","madhupdevops") 
-                    docker_push("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","madhupdevops")
+                    docker_push("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","rahulmane23") 
+                    docker_push("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","rahulmane23")
                 }
             }
         }
